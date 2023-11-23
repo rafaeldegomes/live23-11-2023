@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAGINA DE CADASTRO</title>
+</head>
+
+<body>
+   
+    <h2>Leads Capturados:</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% leads.forEach(function(leads) { %>
+            <tr>
+                <td><%= leads.id_lead %></td>
+                <td><%= leads.nome %></td>
+                <td><%= leads.email %></td>
+                <td>
+                    <a href="/editar/<%= leads.id_lead %>">Editar</a>
+                    <a href="/excluir/<%= leads.id_lead %>">Excluir</a>
+                </td>
+            </tr>
+            <% }); %>
+        </tbody>
+    </table>
+</body>
+
+</html>
